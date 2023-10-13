@@ -1,4 +1,4 @@
-TFTimport { 
+import { 
   cardInfo 
 } from './cardInfo';
 import {
