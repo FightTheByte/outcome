@@ -42,7 +42,7 @@ export const Cards = () => {
             response.json();
         })
         .then((jsonResponse) => {
-            setResponse(jsonResponse);
+           //app assumes server returns with "response" as the key setResponse(jsonResponse.response);
         })
     }
 
