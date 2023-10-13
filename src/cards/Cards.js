@@ -1,4 +1,4 @@
-import { 
+TFTimport { 
   cardInfo 
 } from './cardInfo';
 import {
@@ -21,7 +21,7 @@ export const Cards = () => {
     //holds response from API
     const [response, setResponse] = useState(null);
     //holds the current route state safe/unsafe
-    const [safeRoute, setSafeRoute] = useState();
+    const [safeRoute, setSafeRoute] = useState(true);
 
     function handleSubmit(){
         let route;
@@ -35,7 +35,7 @@ export const Cards = () => {
                 headers:{
                   'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(userString)
+                body: JSON.stringify({input: userString})
             }
         )
         .then((response) => {
