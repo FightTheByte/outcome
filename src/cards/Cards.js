@@ -21,7 +21,7 @@ export const Cards = () => {
     //holds response from API
     const [response, setResponse] = useState(null);
     //holds the current route state safe/unsafe
-    const [safeRoute, setSafeRoute] = useState();
+    const [safeRoute, setSafeRoute] = useState(true);
 
     function handleSubmit(){
         let route;
@@ -35,14 +35,15 @@ export const Cards = () => {
                 headers:{
                   'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(userString)
+                body: JSON.stringify({input: userString})
             }
         )
         .then((response) => {
             response.json();
         })
         .then((jsonResponse) => {
-            setResponse(jsonResponse);
+         //app assumes server returns with "response" as the key
+ setResponse(jsonResponse.response);
         })
     }
 
